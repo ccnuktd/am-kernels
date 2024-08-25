@@ -16,5 +16,6 @@ void test_strlen();
 void test_memcmp();
 
 void test_sprintf();
+void test_printf();
 
 #endif

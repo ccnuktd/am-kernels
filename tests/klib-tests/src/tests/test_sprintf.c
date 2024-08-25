@@ -19,11 +19,13 @@ void test_sprintf() {
 	assert(r == 0);
 	
 	// %s测试
-	sprintf(str, "hello\0world");
+	int ret = sprintf(str, "hello\0world");
 	assert(strcmp(str, "hello") == 0);
+	assert(ret == 5);
 
-	sprintf(str, "hello world");
+	ret = sprintf(str, "hello world");
 	assert(strcmp(str, "hello world") == 0);
+	assert(ret == 11);
 
 	sprintf(str, "");
 	assert(strcmp(str, "") == 0);

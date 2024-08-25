@@ -13,5 +13,6 @@ int main(const char *args) {
   test_memcmp();
 
   test_sprintf();
+  test_printf();
   return 0;
 }
