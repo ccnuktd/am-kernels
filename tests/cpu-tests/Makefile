@@ -1,4 +1,4 @@
-.PHONY: all run gdb clean latest $(ALL)
+.PHONY: all run runstep gdb clean latest $(ALL)
 
 RESULT = .result
 $(shell > $(RESULT))
@@ -24,6 +24,10 @@ Makefile.%: tests/%.c latest
 	-@rm -f Makefile.$*
 
 run: all
+	@cat $(RESULT)
+	@rm $(RESULT)
+
+runstep: all
 	@cat $(RESULT)
 	@rm $(RESULT)
 

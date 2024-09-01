@@ -33,4 +33,26 @@ void test_sprintf() {
 	sprintf(str, "\r");
 	assert(strcmp(str, "\r") == 0);
 
+	// %05s
+	char a[4] = "asd";
+	ret = sprintf(str, "%05s", a);
+	assert(strcmp(str, "00asd") == 0);
+	assert(ret == 5);
+
+	char b[7] = "asdasdf";
+	ret = sprintf(str, "%05s", b);
+	assert(strcmp(str, "asdasdf") == 0);
+	assert(ret == strlen(b));
+
+	//%2s
+	char c[4] = "asd";
+	ret = sprintf(str, "%5s", c);
+	assert(strcmp(str, "  asd") == 0);
+	assert(ret == 5);
+
+	char d[7] = "asdasdf";
+	ret = sprintf(str, "%5s", d);
+	assert(strcmp(str, "asdasdf") == 0);
+	assert(ret == strlen(d));
+
 }
